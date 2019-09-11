@@ -1,26 +1,21 @@
-# I had this great script, but my keyboard broke and I can't indent
-# any of my code. Can you indent it for me?
 
-cats = ['Grizabella', 'Rum Tum Tugger', 'Demeter', 'Munkustrap',
-'Mistoffelees', 'Macavity', 'Rumpleteazer', 'Mungo Jerry', 'Skimbleshanks']
+def assign_cat_to_instrument(cat_lst, instrument_lst):
+    return dict(zip(cat_lst, instrument_lst))
 
-instruments = ['keyboard', 'cello', 'bass', 'flute', 'pipe', 'piano',
-'violin', 'oboe', 'triangle']
+def print_assigment(zipped_dict):
+    result = []
+    for key, value in zipped_dict.items():
+        result.append(f"{key} plays the {value}!")
+    return result
 
-def get_cat_and_instrument(position):
-cat = cats[position]
-instrument = instruments[position]
-return "{} plays the {}".format(cat, instrument)
+if __name__ == '__main__':
+    cats = ['Grizabella', 'Rum Tum Tugger', 'Demeter', 'Munkustrap',
+            'Mistoffelees', 'Macavity', 'Rumpleteazer', 'Mungo Jerry', 'Skimbleshanks']
+    instruments = ['keyboard', 'cello', 'bass', 'flute', 'pipe', 'piano',
+                   'violin', 'oboe', 'triangle']
+    cat_instrument_dict = assign_cat_to_instrument(cats, instruments)
+    print(cat_instrument_dict)
 
-# Print out my cat orchestra one by one
-total_cats = len(cats)
-position = 0
-
-while True:
-if position >= total_cats:
-    break
-
-print get_cat_and_instrument(position)
-position += 1
-
-# Could you do the assignment of cats and instruments any other ways?
+    result_dict = print_assigment(cat_instrument_dict)
+    for item in result_dict:
+        print(item)
